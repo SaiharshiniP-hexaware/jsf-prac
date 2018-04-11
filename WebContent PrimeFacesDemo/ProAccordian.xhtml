@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<f:view>
+	<h1 align="center">Product Accordian</h1>
+	<hr />
+	<h:form id="form">
+		<div style="width: 50%; margin: 0 auto">
+			<p:accordionPanel multiple="true" style="width:300px">
+				<p:tab title="Brands">
+
+
+					<p:dataList value="#{abean.brands}" var="brand">
+						<h:outputText value="#{brand}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Colors">
+
+
+					<p:dataList value="#{abean.colors}" var="color">
+						<h:outputText value="#{color}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Sizes">
+
+					<p:dataList value="#{abean.sizes}" var="size">
+						<h:outputText value="#{size}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+			</p:tabView>
+				<div style="width: 50%; margin: 0 auto">
+			<p:accordionPanel  style="width:300px">
+				<p:tab title="Brands">
+
+
+					<p:dataList value="#{abean.brands}" var="brand">
+						<h:outputText value="#{brand}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Colors">
+
+
+					<p:dataList value="#{abean.colors}" var="color">
+						<h:outputText value="#{color}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Sizes">
+
+					<p:dataList value="#{abean.sizes}" var="size">
+						<h:outputText value="#{size}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+			</p:accordionPanel>
+			
+			
+			
+			
+				<div style="width: 50%; margin: 0 auto">
+			<p:accordionPanel multiple="true" style="width:300px">
+				<p:tab title="Brands">
+
+
+					<p:dataList value="#{abean.brands}" var="brand">
+						<h:outputText value="#{brand}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Colors">
+
+
+					<p:dataList value="#{abean.colors}" var="color">
+						<h:outputText value="#{color}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+
+				<p:tab title="Sizes">
+
+					<p:dataList value="#{abean.sizes}" var="size">
+						<h:outputText value="#{size}" />
+
+					</p:dataList>
+
+
+				</p:tab>
+			</p:accordionPanel>
+		</div>
+	</h:form>
+</f:view>
+</html>
