@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+   xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   <f:view>
+  <head>
+    <title>Tax Calculation</title>
+    <style>
+      table{
+        margin: 0 auto;
+        border-collapse: collapse;
+      }
+      .css1{
+         background-color: orange;
+      }
+      tfoot,thead{
+         background-color: red;
+         text-align:center;
+         color:white;
+      }
+    </style>
+  </head>
+  <body>
+  <h1 align="center">Tax Result</h1>
+  <h5 align="center"> <a href="Main.xhtml">Home</a></h5>
+  <hr size="3"/>
+  <h:panelGrid id="pg" columns="2" columnClasses="css1" 
+  							bgcolor="wheat" cellpadding="10">
+  	<f:facet name="header">
+  	   <h:outputText value="TaxResult"/>
+  	</f:facet>
+     <h:outputText value="Employee Name"/>
+     <h:outputText value="#{tbean.ename}"/>
+     
+     <h:outputText value="Annual Income"/>
+     <h:outputText value="#{tbean.income}"/>
+     
+     <h:outputText value="Tax to be paid"/>
+			<h:outputText value="#{tbean.tax}">
+				<f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+			</h:outputText>
+		</h:panelGrid>
+  </body>
+</f:view>
+   
+</html>

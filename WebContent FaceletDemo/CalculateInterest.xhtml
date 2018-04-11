@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"   
+   xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+  
+ 
+   <f:view>
+	<head>
+<title>Simple Interest Calculation</title>
+<style>
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+.css1 {
+	background-color: wheat;
+}
+
+.css3 {
+	color: red;
+}
+
+tfoot, thead {
+	background-color: blue;
+	text-algin: center;
+	color: white;
+}
+</style>
+	<body>
+		<h1 align="center">Simple Interest</h1>
+		<a href="Main.xhtml">Home</a>
+		<hr size="2" />
+		<h:form id="tfrm">
+			<h:panelGrid id="pg1" columns="3" columnClasses="css1,,css3"
+				cellpadding="10" bgcolor="wheat">
+				<f:facet name="header">
+					<h:outputText value="Calculate Interest" />
+				</f:facet>
+				<h:outputText value="Amount"></h:outputText>
+				<h:inputText id="xamt" value="#{ibean.amt}" required="true"
+					requiredMessage=" enter a valid amount" validatorMessage="Amount must be minimum 5000">
+					<f:validateDoubleRange minimum="5000"></f:validateDoubleRange></h:inputText>
+				<h:message for="xamt"></h:message>
+				<h:outputText value="Rate"></h:outputText>
+				<h:inputText id="xrate" value="#{ibean.rate}" required="true"
+					requiredMessage="enter a valid rate" validatorMessage="rate must be minimum 1">
+					<f:validateDoubleRange minimum="1" maximum="30"/></h:inputText>
+				<h:message for="xrate"></h:message>
+				<h:outputText value="years"></h:outputText>
+				<h:inputText id="xyears" value="#{ibean.years}" required="true"
+					requiredMessage="enter valid years" validatorMessage="years must be minimum 1">
+					<f:validateLongRange minimum="1" maximum="30"/></h:inputText>
+				<h:message for="xyears"></h:message>
+				<h:commandButton value="calcInterest"
+					action="#{ibean.calculateInterest}" />
+					<h:commandButton value="calcComInterest"
+					action="#{ibean.calculateComInterest}" />
+				<f:facet name="footer">
+					<h:outputText value="" />
+				</f:facet>
+			</h:panelGrid>
+
+		</h:form>
+	</body>
+	</head>
+</f:view>
+ </html>
+ 
